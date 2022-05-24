@@ -43,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
     Button btn_xn;
     Button btn_moon;
     Button btn_bin;
+    Button btn_rnd;
+    Button btn_round;
+    Button btn_med;
+
 
     String sign, value1, value2;
     Double num1, num2, result;
@@ -86,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
         btn_del = (ImageButton) findViewById(R.id.btn_del);
         btn_c = (Button) findViewById(R.id.btn_c);
         btn_bin = (Button) findViewById(R.id.btn_bin);
+        btn_round = (Button) findViewById(R.id.btn_round);
+        btn_rnd = (Button) findViewById(R.id.btn_rnd);
+        btn_med = (Button) findViewById(R.id.btn_med);
 
         darkmod = true;
         hasDot = false;
@@ -146,6 +153,9 @@ public class MainActivity extends AppCompatActivity {
     public void btnClick_sun(View view) {
 
         if (darkmod){
+            btn_round.setBackgroundColor(getResources().getColor(R.color.colorSecondaryLite));
+            btn_rnd.setBackgroundColor(getResources().getColor(R.color.colorSecondaryLite));
+            btn_med.setBackgroundColor(getResources().getColor(R.color.colorSecondaryLite));
             btn_sun.setBackgroundColor(getResources().getColor(R.color.colorSecondaryLite));
             btn_moon.setBackgroundColor(getResources().getColor(R.color.colorSecondaryLite));
             btn_1.setBackgroundColor(getResources().getColor(R.color.colorSecondaryLite));
@@ -184,6 +194,9 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void btnClick_moon(View view) {
         if (!darkmod) {
+            btn_round.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            btn_med.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+            btn_rnd.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
             btn_sun.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
             btn_1.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
             btn_2.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
@@ -276,7 +289,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnClick_rnd(View view) {
-        value1 = Double.toString(Math.random() * 2000 - 1000);
+        value1 = Double.toString(Math.random() * 2000 - 1000 );
         input.setText(value1);
         hasDot = false;
         signBox.setText("random");
